@@ -11,6 +11,7 @@ COPY package*.json ./
 RUN npm install
 
 # Copy the rest of the backend code
+
 COPY . .
 
 # Expose the port the backend will run on
