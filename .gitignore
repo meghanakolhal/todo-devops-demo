@@ -1,0 +1,24 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Logs
+s
+*.log
+logs/
+
+# .env files (if you're using environment variables)
+.env
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# IDE files (if you're using an editor like VSCode)
+.vscode/
+.idea/
+
+# Build files
+dist/
+build/
