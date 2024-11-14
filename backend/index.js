@@ -4,8 +4,9 @@ const cors = require("cors");
 
 const app = express();
 const port = 5000;
-
-app.use(cors());
+app.use(cors({
+  origin: '*', // This will allow all origins
+}));
 app.use(bodyParser.json());
 
 let tasks = [];
