@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';  // Import the CSS file
+import config from './config';  // Import the config file
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -8,7 +9,7 @@ function App() {
 
   // Fetch tasks when the app loads
   useEffect(() => {
-    axios.get('http://localhost:5000/tasks')
+    axios.get(`${config.apiUrl}/tasks`) // Use the dynamic API URL from config
       .then(response => setTasks(response.data))
       .catch(error => console.error(error));
   }, []);
@@ -16,7 +17,7 @@ function App() {
   // Handle adding a task
   const addTask = () => {
     if (taskName.trim()) {
-      axios.post('http://localhost:5000/tasks', { id: Date.now(), name: taskName })
+      axios.post(`${config.apiUrl}/tasks`, { id: Date.now(), name: taskName }) // Use the dynamic API URL from config
         .then(response => {
           setTasks([...tasks, response.data]);
           setTaskName('');
@@ -27,7 +28,7 @@ function App() {
 
   // Handle deleting a task
   const deleteTask = (id) => {
-    axios.delete(`http://localhost:5000/tasks/${id}`)
+    axios.delete(`${config.apiUrl}/tasks/${id}`) // Use the dynamic API URL from config
       .then(() => {
         setTasks(tasks.filter(task => task.id !== id));
       })
