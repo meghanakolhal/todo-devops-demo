@@ -1,0 +1,24 @@
+# Node modules
+node_modules
+
+# Logs
+npm-debug.log
+yarn-error.log
+
+# Temporary files
+*.tmp
+
+# Version control
+.git
+.gitignore
+
+# Editor settings
+.vscode
+.idea
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Environment files (should be configured securely using secrets or environment variables)
+.env

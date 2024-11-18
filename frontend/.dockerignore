@@ -1,0 +1,21 @@
+# Node modules
+node_modules
+
+# Logs
+npm-debug.log
+yarn-error.log
+
+# Build output (if Docker builds the app, exclude local build files)
+build
+
+# Version control
+.git
+.gitignore
+
+# Editor settings
+.vscode
+.idea
+
+# Operating system files
+.DS_Store
+Thumbs.db
