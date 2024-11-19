@@ -42,7 +42,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 echo 'Deploying frontend and backend to Kubernetes...'
-                withKubeConfig([credentialsId: 'kubeconfig-jenkins', configFile: KUBE_CONFIG]) {
+                withKubeConfig([credentialsId: 'kubeconfig-jenkins']) {
                     sh '''
                         kubectl apply -f kubernetes/deployment.yaml
                         kubectl apply -f kubernetes/service.yaml
