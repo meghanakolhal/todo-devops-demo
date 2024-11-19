@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: todo-backend
+  template:
+    metadata:
+      labels:
+        app: todo-backend
+    spec:
+      containers:
+        - name: backend
+          image: meghanaharish/backend  # Correct Docker image name
+          ports:
+            - containerPort: 5000
+          envFrom:
+            - configMapRef:
+                name: todo-backend-config  # Optional if you are using a configMap for env variables
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: todo-frontend
+  template:
+    metadata:
+      labels:
+        app: todo-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: meghanaharish/frontend  # Correct Docker image name
+          ports:
+            - containerPort: 3000  # Correct port for frontend
+          envFrom:
+            - configMapRef:
+                name: todo-frontend-config  # Optional if you are using a configMap for env variables
