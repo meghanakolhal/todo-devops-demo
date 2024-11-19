@@ -6,8 +6,8 @@ pipeline {
         BACKEND_DIR = "backend"
         KUBE_CONFIG = '/mnt/jenkins/.kube/config'  // Added kubeconfig location
         DOCKER_REGISTRY = 'docker.io'
-        FRONTEND_IMAGE = 'meghanaharish/frontend:latest'
-        BACKEND_IMAGE = 'meghanaharish/backend:latest'
+        FRONTEND_IMAGE = 'meghanaharish/frontend'
+        BACKEND_IMAGE = 'meghanaharish/backend'
     }
 
     stages {
