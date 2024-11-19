@@ -44,9 +44,9 @@ pipeline {
                 echo 'Deploying frontend and backend to Kubernetes...'
                 withKubeConfig([credentialsId: 'kubeconfig-jenkins', configFile: KUBE_CONFIG]) {
                     sh '''
-                        kubectl apply -f k8s/deployment.yaml
-                        kubectl apply -f k8s/service.yaml
-                        kubectl apply -f k8s/ingress.yaml
+                        kubectl apply -f kubernetes/deployment.yaml
+                        kubectl apply -f kubernetes/service.yaml
+                        kubectl apply -f kubernetes/ingress.yaml
                     '''
                 }
             }
